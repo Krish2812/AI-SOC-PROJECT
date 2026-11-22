@@ -1,0 +1,201 @@
+timestamp,host,source_ip,event_type,failed_logins,bytes_out,unique_dst_ports,process_risk,label,ml_anomaly,rule_reasons,rule_severity,rule_alert,alert,alert_source,priority,investigation_note
+2026-10-01 10:00:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,201330,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:05:00+00:00,WIN-CLIENT,192.168.56.10,login,0,196163,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:10:00+00:00,UBUNTU-CLIENT,192.168.56.30,process,2,105774,2,4,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:15:00+00:00,WIN-CLIENT,192.168.56.10,login,0,185460,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:20:00+00:00,WIN-CLIENT,192.168.56.20,process,0,188087,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:25:00+00:00,WIN-CLIENT,192.168.56.30,network,0,157771,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:30:00+00:00,UBUNTU-CLIENT,192.168.56.30,network,0,98068,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:35:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,0,203497,1,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:40:00+00:00,WIN-CLIENT,192.168.56.10,process,0,65661,5,4,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:45:00+00:00,WIN-CLIENT,192.168.56.20,login,1,51027,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:50:00+00:00,WIN-CLIENT,192.168.56.20,process,0,91679,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 10:55:00+00:00,WIN-CLIENT,192.168.56.30,process,1,88347,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:00:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,1,124706,1,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:05:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,1,188013,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:10:00+00:00,WIN-CLIENT,192.168.56.20,network,1,155203,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:15:00+00:00,UBUNTU-CLIENT,192.168.56.10,process,0,56176,1,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:20:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,243234,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:25:00+00:00,UBUNTU-CLIENT,192.168.56.20,process,3,126395,1,1,benign,True,,Informational,False,True,ML,Review,ML model flagged an unusual combination of activity; investigate context.
+2026-10-01 11:30:00+00:00,WIN-CLIENT,192.168.56.10,process,3,151489,2,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:35:00+00:00,WIN-CLIENT,192.168.56.30,network,0,216624,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:40:00+00:00,UBUNTU-CLIENT,192.168.56.30,process,0,120917,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:45:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,0,195667,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:50:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,3,44831,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 11:55:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,3,198361,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:00:00+00:00,UBUNTU-CLIENT,192.168.56.20,process,0,28159,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:05:00+00:00,WIN-CLIENT,192.168.56.20,network,0,132688,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:10:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,48746,1,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:15:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,70537,1,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:20:00+00:00,WIN-CLIENT,192.168.56.10,login,0,238024,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:25:00+00:00,WIN-CLIENT,192.168.56.10,network,0,199540,2,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:30:00+00:00,WIN-CLIENT,192.168.56.20,login,0,15795,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:35:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,143036,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:40:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,89435,1,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:45:00+00:00,WIN-CLIENT,192.168.56.30,process,2,85796,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:50:00+00:00,WIN-CLIENT,192.168.56.30,login,2,215939,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 12:55:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,0,81900,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:00:00+00:00,WIN-CLIENT,192.168.56.10,process,3,206869,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:05:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,0,235763,4,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:10:00+00:00,WIN-CLIENT,192.168.56.30,process,0,154237,5,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:15:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,62408,2,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:20:00+00:00,WIN-CLIENT,192.168.56.10,network,0,142194,4,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:25:00+00:00,WIN-CLIENT,192.168.56.20,login,0,132194,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:30:00+00:00,WIN-CLIENT,192.168.56.20,network,0,23195,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:35:00+00:00,WIN-CLIENT,192.168.56.10,network,0,89568,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:40:00+00:00,WIN-CLIENT,192.168.56.30,network,0,226842,3,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:45:00+00:00,WIN-CLIENT,192.168.56.20,login,2,198392,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:50:00+00:00,WIN-CLIENT,192.168.56.30,network,1,114837,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 13:55:00+00:00,WIN-CLIENT,192.168.56.20,network,3,169996,2,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:00:00+00:00,WIN-CLIENT,192.168.56.10,process,0,92781,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:05:00+00:00,UBUNTU-CLIENT,192.168.56.30,network,0,202914,2,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:10:00+00:00,WIN-CLIENT,192.168.56.10,login,2,193739,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:15:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,0,93570,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:20:00+00:00,UBUNTU-CLIENT,192.168.56.30,network,1,23531,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:25:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,99706,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:30:00+00:00,WIN-CLIENT,192.168.56.20,network,2,225367,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:35:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,2,171006,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:40:00+00:00,WIN-CLIENT,192.168.56.20,login,0,34297,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:45:00+00:00,WIN-CLIENT,192.168.56.10,login,0,14666,1,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:50:00+00:00,UBUNTU-CLIENT,192.168.56.30,network,0,136124,3,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 14:55:00+00:00,WIN-CLIENT,192.168.56.30,login,1,75193,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:00:00+00:00,WIN-CLIENT,192.168.56.30,login,0,162002,3,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:05:00+00:00,WIN-CLIENT,192.168.56.30,login,0,98078,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:10:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,212287,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:15:00+00:00,WIN-CLIENT,192.168.56.20,login,0,21240,1,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:20:00+00:00,WIN-CLIENT,192.168.56.30,process,0,170716,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:25:00+00:00,UBUNTU-CLIENT,192.168.56.10,process,2,70807,1,4,benign,True,,Informational,False,True,ML,Review,ML model flagged an unusual combination of activity; investigate context.
+2026-10-01 15:30:00+00:00,WIN-CLIENT,192.168.56.10,login,0,81489,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:35:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,0,101109,1,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:40:00+00:00,WIN-CLIENT,192.168.56.20,process,1,193414,4,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:45:00+00:00,WIN-CLIENT,192.168.56.20,login,0,123198,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:50:00+00:00,WIN-CLIENT,192.168.56.30,process,1,40864,1,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 15:55:00+00:00,WIN-CLIENT,192.168.56.10,process,0,229688,3,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:00:00+00:00,WIN-CLIENT,192.168.56.10,network,1,128764,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:05:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,0,193054,4,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:10:00+00:00,WIN-CLIENT,192.168.56.20,login,0,123942,3,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:15:00+00:00,WIN-CLIENT,192.168.56.30,login,1,197628,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:20:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,1,162407,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:25:00+00:00,WIN-CLIENT,192.168.56.10,login,0,233478,3,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:30:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,1,140557,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:35:00+00:00,WIN-CLIENT,192.168.56.10,process,0,198802,3,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:40:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,3,94445,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:45:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,1,150307,4,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:50:00+00:00,WIN-CLIENT,192.168.56.10,login,2,119524,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 16:55:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,2,45890,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:00:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,0,37385,1,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:05:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,111191,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:10:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,65473,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:15:00+00:00,WIN-CLIENT,192.168.56.20,process,1,68062,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:20:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,1,70673,2,4,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:25:00+00:00,WIN-CLIENT,192.168.56.10,login,0,30310,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:30:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,0,43192,5,4,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:35:00+00:00,WIN-CLIENT,192.168.56.20,login,1,214372,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:40:00+00:00,UBUNTU-CLIENT,192.168.56.30,process,0,232715,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:45:00+00:00,WIN-CLIENT,192.168.56.30,login,0,152553,4,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:50:00+00:00,WIN-CLIENT,192.168.56.20,login,1,219418,2,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 17:55:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,120750,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:00:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,0,112545,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:05:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,1,206840,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:10:00+00:00,WIN-CLIENT,192.168.56.20,login,0,80127,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:15:00+00:00,WIN-CLIENT,192.168.56.30,login,2,23371,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:20:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,1,217514,4,4,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:25:00+00:00,WIN-CLIENT,192.168.56.20,login,1,212822,5,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:30:00+00:00,WIN-CLIENT,192.168.56.30,process,0,152967,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:35:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,0,37386,3,4,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:40:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,3,220381,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:45:00+00:00,UBUNTU-CLIENT,192.168.56.20,process,0,202348,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:50:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,0,15498,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 18:55:00+00:00,UBUNTU-CLIENT,192.168.56.20,process,0,79625,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:00:00+00:00,WIN-CLIENT,192.168.56.20,login,1,216065,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:05:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,1,239041,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:10:00+00:00,UBUNTU-CLIENT,192.168.56.20,process,0,244843,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:15:00+00:00,WIN-CLIENT,192.168.56.20,process,1,3668,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:20:00+00:00,WIN-CLIENT,192.168.56.30,network,0,221289,3,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:25:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,0,209619,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:30:00+00:00,WIN-CLIENT,192.168.56.30,login,0,25537,3,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:35:00+00:00,UBUNTU-CLIENT,192.168.56.30,process,0,100843,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:40:00+00:00,WIN-CLIENT,192.168.56.20,login,0,241220,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:45:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,0,53633,2,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:50:00+00:00,UBUNTU-CLIENT,192.168.56.30,network,0,518,1,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 19:55:00+00:00,UBUNTU-CLIENT,192.168.56.30,process,1,43902,1,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:00:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,1734,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:05:00+00:00,WIN-CLIENT,192.168.56.30,login,0,71091,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:10:00+00:00,WIN-CLIENT,192.168.56.10,process,2,151092,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:15:00+00:00,WIN-CLIENT,192.168.56.20,process,0,68144,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:20:00+00:00,WIN-CLIENT,192.168.56.30,network,2,23351,4,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:25:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,235701,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:30:00+00:00,WIN-CLIENT,192.168.56.10,network,0,101988,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:35:00+00:00,UBUNTU-CLIENT,192.168.56.30,process,0,70473,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:40:00+00:00,UBUNTU-CLIENT,192.168.56.30,network,0,105230,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:45:00+00:00,WIN-CLIENT,192.168.56.10,login,0,150018,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:50:00+00:00,WIN-CLIENT,192.168.56.10,network,0,126858,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 20:55:00+00:00,WIN-CLIENT,192.168.56.30,login,2,32732,5,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:00:00+00:00,WIN-CLIENT,192.168.56.10,login,3,38264,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:05:00+00:00,WIN-CLIENT,192.168.56.20,network,0,165694,1,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:10:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,92385,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:15:00+00:00,UBUNTU-CLIENT,192.168.56.10,process,0,9567,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:20:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,2,151181,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:25:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,0,158403,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:30:00+00:00,WIN-CLIENT,192.168.56.10,network,0,170456,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:35:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,0,45476,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:40:00+00:00,UBUNTU-CLIENT,192.168.56.20,process,0,86520,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:45:00+00:00,WIN-CLIENT,192.168.56.30,login,2,154205,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:50:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,0,142066,1,4,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 21:55:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,0,38163,4,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:00:00+00:00,WIN-CLIENT,192.168.56.30,process,0,60338,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:05:00+00:00,UBUNTU-CLIENT,192.168.56.30,process,0,50469,5,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:10:00+00:00,WIN-CLIENT,192.168.56.20,login,0,120158,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:15:00+00:00,WIN-CLIENT,192.168.56.30,network,0,171797,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:20:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,52643,2,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:25:00+00:00,WIN-CLIENT,192.168.56.20,login,1,224467,2,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:30:00+00:00,WIN-CLIENT,192.168.56.20,network,1,80927,4,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:35:00+00:00,UBUNTU-CLIENT,192.168.56.10,process,0,129562,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:40:00+00:00,WIN-CLIENT,192.168.56.30,login,1,152727,5,4,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:45:00+00:00,UBUNTU-CLIENT,192.168.56.20,process,0,108814,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:50:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,0,22141,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 22:55:00+00:00,UBUNTU-CLIENT,192.168.56.10,process,0,30069,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:00:00+00:00,WIN-CLIENT,192.168.56.30,login,0,114916,3,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:05:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,203674,1,2,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:10:00+00:00,UBUNTU-CLIENT,192.168.56.20,network,0,78755,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:15:00+00:00,WIN-CLIENT,192.168.56.10,network,0,33779,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:20:00+00:00,WIN-CLIENT,192.168.56.10,network,0,40147,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:25:00+00:00,UBUNTU-CLIENT,192.168.56.30,process,2,166783,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:30:00+00:00,WIN-CLIENT,192.168.56.20,login,2,121385,5,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:35:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,1,78831,4,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:40:00+00:00,WIN-CLIENT,192.168.56.20,login,0,202306,5,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:45:00+00:00,WIN-CLIENT,192.168.56.10,network,0,107001,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:50:00+00:00,WIN-CLIENT,192.168.56.20,network,2,113881,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-01 23:55:00+00:00,WIN-CLIENT,192.168.56.30,process,1,110605,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:00:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,0,230364,2,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:05:00+00:00,UBUNTU-CLIENT,192.168.56.30,login,2,169434,3,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:10:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,2,10001,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:15:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,83330,4,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:20:00+00:00,WIN-CLIENT,192.168.56.10,network,1,218856,4,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:25:00+00:00,UBUNTU-CLIENT,192.168.56.10,network,1,75438,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:30:00+00:00,UBUNTU-CLIENT,192.168.56.10,login,1,157384,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:35:00+00:00,UBUNTU-CLIENT,192.168.56.20,process,1,173802,2,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:40:00+00:00,UBUNTU-CLIENT,192.168.56.10,process,0,83332,1,0,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:45:00+00:00,WIN-CLIENT,192.168.56.20,login,0,96623,3,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:50:00+00:00,UBUNTU-CLIENT,192.168.56.20,login,0,42511,1,3,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 00:55:00+00:00,WIN-CLIENT,192.168.56.10,network,0,122188,1,1,benign,False,,Informational,False,False,None,Informational,No detection rule matched.
+2026-10-02 01:00:00+00:00,UBUNTU-CLIENT,192.168.56.77,network,12,15000000,35,9,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20); High-risk process indicator (score >=8),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20); High-risk process indicator (score >=8)
+2026-10-02 01:05:00+00:00,UBUNTU-CLIENT,192.168.56.77,network,8,15000000,22,7,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20)
+2026-10-02 01:10:00+00:00,UBUNTU-CLIENT,192.168.56.77,network,12,100000,3,9,suspicious,True,Repeated failed logins (>=8); High-risk process indicator (score >=8),High,True,True,Rule + ML,High,Repeated failed logins (>=8); High-risk process indicator (score >=8)
+2026-10-02 01:15:00+00:00,UBUNTU-CLIENT,192.168.56.99,login,12,8000000,35,2,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20)
+2026-10-02 01:20:00+00:00,UBUNTU-CLIENT,192.168.56.77,login,20,100000,35,2,suspicious,True,Repeated failed logins (>=8); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); High destination-port diversity (>=20)
+2026-10-02 01:25:00+00:00,WIN-CLIENT,192.168.56.77,process,12,15000000,35,7,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20)
+2026-10-02 01:30:00+00:00,WIN-CLIENT,192.168.56.77,network,12,8000000,22,2,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20)
+2026-10-02 01:35:00+00:00,UBUNTU-CLIENT,192.168.56.99,process,20,100000,22,7,suspicious,True,Repeated failed logins (>=8); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); High destination-port diversity (>=20)
+2026-10-02 01:40:00+00:00,UBUNTU-CLIENT,192.168.56.77,network,20,100000,22,7,suspicious,True,Repeated failed logins (>=8); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); High destination-port diversity (>=20)
+2026-10-02 01:45:00+00:00,UBUNTU-CLIENT,192.168.56.99,network,8,100000,22,9,suspicious,True,Repeated failed logins (>=8); High destination-port diversity (>=20); High-risk process indicator (score >=8),High,True,True,Rule + ML,High,Repeated failed logins (>=8); High destination-port diversity (>=20); High-risk process indicator (score >=8)
+2026-10-02 01:50:00+00:00,WIN-CLIENT,192.168.56.99,network,20,15000000,22,9,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20); High-risk process indicator (score >=8),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20); High-risk process indicator (score >=8)
+2026-10-02 01:55:00+00:00,UBUNTU-CLIENT,192.168.56.99,process,20,100000,35,7,suspicious,True,Repeated failed logins (>=8); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); High destination-port diversity (>=20)
+2026-10-02 02:00:00+00:00,WIN-CLIENT,192.168.56.77,login,20,15000000,35,2,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20)
+2026-10-02 02:05:00+00:00,UBUNTU-CLIENT,192.168.56.99,network,20,8000000,35,2,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20)
+2026-10-02 02:10:00+00:00,WIN-CLIENT,192.168.56.99,process,12,100000,22,7,suspicious,True,Repeated failed logins (>=8); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); High destination-port diversity (>=20)
+2026-10-02 02:15:00+00:00,UBUNTU-CLIENT,192.168.56.99,network,20,8000000,35,7,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20)
+2026-10-02 02:20:00+00:00,WIN-CLIENT,192.168.56.77,login,20,100000,3,7,suspicious,True,Repeated failed logins (>=8),High,True,True,Rule + ML,High,Repeated failed logins (>=8)
+2026-10-02 02:25:00+00:00,WIN-CLIENT,192.168.56.77,network,20,8000000,35,9,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20); High-risk process indicator (score >=8),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20); High-risk process indicator (score >=8)
+2026-10-02 02:30:00+00:00,UBUNTU-CLIENT,192.168.56.77,login,8,15000000,35,7,suspicious,True,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20),High,True,True,Rule + ML,High,Repeated failed logins (>=8); Unusually high outbound data (>=5 MB); High destination-port diversity (>=20)
+2026-10-02 02:35:00+00:00,WIN-CLIENT,192.168.56.77,login,8,100000,3,2,suspicious,False,Repeated failed logins (>=8),High,True,True,Rule,High,Repeated failed logins (>=8)

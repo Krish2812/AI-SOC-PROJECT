@@ -1,0 +1,14 @@
+flowchart TD
+    A[Windows endpoint] --> B[Sysmon]
+    C[Network traffic] --> D[Suricata]
+    E[Linux endpoint] --> F[Wazuh agent]
+    B --> G[Wazuh / JSON export]
+    D --> H[EVE JSON]
+    F --> G
+    G --> I[Python normalization]
+    H --> I
+    I --> J[Rule engine]
+    I --> K[Isolation Forest]
+    J --> L[Hybrid alert output]
+    K --> L
+    L --> M[Streamlit SOC dashboard]
