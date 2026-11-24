@@ -1,5 +1,6 @@
 
 import streamlit as st
+import altair as alt
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -25,84 +26,241 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    .main {
-        background-color: #0e1117;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
+
+    :root {
+        --bg: #0a0e17;
+        --panel: #111827;
+        --panel-2: #161f30;
+        --border: #1f2a3d;
+        --text: #e5e9f0;
+        --muted: #8b97ad;
+        --accent: #22d3ee;
+        --accent-2: #6366f1;
     }
+
+    html, body, [class*="css"], .stApp {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .stApp {
+        background:
+            radial-gradient(1200px 500px at 10% -10%, rgba(99,102,241,0.12), transparent 60%),
+            radial-gradient(900px 400px at 100% 0%, rgba(34,211,238,0.08), transparent 60%),
+            var(--bg);
+    }
+
+    [data-testid="stHeader"] { background: transparent; }
 
     .block-container {
-        padding-top: 2rem;
+        padding-top: 1.5rem;
         padding-bottom: 2rem;
+        max-width: 1400px;
     }
 
+    /* ---------- Sidebar ---------- */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #0d1322 0%, #0a0e17 100%);
+        border-right: 1px solid var(--border);
+    }
+    [data-testid="stSidebar"] h1 {
+        font-size: 20px;
+        font-weight: 800;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* ---------- Hero banner ---------- */
+    .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #111a2e 0%, #0f172a 55%, #151a3a 100%);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px 32px;
+        margin-bottom: 28px;
+    }
+    .hero::after {
+        content: "";
+        position: absolute;
+        right: -60px; top: -60px;
+        width: 260px; height: 260px;
+        background: radial-gradient(circle, rgba(34,211,238,0.18), transparent 70%);
+        pointer-events: none;
+    }
+    .hero-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
     .dashboard-title {
-        font-size: 38px;
+        font-size: 32px;
         font-weight: 800;
         color: #f8fafc;
-        margin-bottom: 5px;
+        letter-spacing: -0.5px;
     }
-
+    .dashboard-title span {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     .dashboard-subtitle {
-        color: #9ca3af;
+        color: var(--muted);
         font-size: 14px;
-        margin-bottom: 35px;
+        margin-top: 6px;
     }
+    .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(34,197,94,0.1);
+        border: 1px solid rgba(34,197,94,0.35);
+        color: #4ade80;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    .status-dot {
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+        animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+        0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+        70%  { box-shadow: 0 0 0 10px rgba(34,197,94,0); }
+        100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+    .hero-meta {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+        font-size: 12px;
+        color: var(--muted);
+    }
+    .hero-meta b { color: var(--text); font-weight: 600; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
 
+    /* ---------- Section titles ---------- */
     .section-title {
-        font-size: 27px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 21px;
         font-weight: 700;
         color: #f8fafc;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin: 26px 0 16px 0;
+    }
+    .section-title::before {
+        content: "";
+        width: 4px;
+        height: 22px;
+        border-radius: 4px;
+        background: linear-gradient(180deg, var(--accent), var(--accent-2));
     }
 
-    .severity-card {
-        background: #1e2531;
-        border-radius: 12px;
-        padding: 22px;
-        border: 1px solid #303846;
-        min-height: 155px;
+    /* ---------- KPI cards ---------- */
+    .kpi-card {
+        background: linear-gradient(160deg, var(--panel-2), var(--panel));
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 20px 22px;
+        transition: transform .15s ease, border-color .15s ease;
     }
-
-    .severity-name {
-        font-size: 23px;
-        font-weight: 700;
-        color: white;
-    }
-
-    .severity-label {
+    .kpi-card:hover { transform: translateY(-2px); border-color: #2c3b57; }
+    .kpi-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
         font-size: 13px;
-        color: #b8c4d6;
-        margin-top: 18px;
+        font-weight: 500;
     }
-
-    .severity-value {
-        font-size: 34px;
-        font-weight: 700;
-        margin-top: 5px;
-    }
-
-    .critical { border-left: 5px solid #ff3333; }
-    .high { border-left: 5px solid #ff7043; }
-    .medium { border-left: 5px solid #ffb74d; }
-    .low { border-left: 5px solid #4caf50; }
-    .review { border-left: 5px solid #42a5f5; }
-    .informational { border-left: 5px solid #78909c; }
-
-    .stMetric {
-        background: #171c26;
-        padding: 18px;
+    .kpi-icon {
+        width: 34px; height: 34px;
+        display: grid; place-items: center;
         border-radius: 10px;
-        border: 1px solid #303846;
+        font-size: 17px;
     }
+    .kpi-value {
+        font-size: 34px;
+        font-weight: 800;
+        color: #f8fafc;
+        margin-top: 10px;
+        letter-spacing: -1px;
+    }
+    .kpi-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-    div[data-testid="stDataFrame"] {
-        border: 1px solid #303846;
-        border-radius: 8px;
+    /* ---------- Severity cards ---------- */
+    .severity-card {
+        background: linear-gradient(160deg, var(--panel-2), var(--panel));
+        border-radius: 14px;
+        padding: 18px 20px;
+        border: 1px solid var(--border);
+        transition: transform .15s ease;
     }
+    .severity-card:hover { transform: translateY(-2px); }
+    .severity-name {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+    .severity-value {
+        font-size: 32px;
+        font-weight: 800;
+        margin-top: 8px;
+    }
+    .severity-label { font-size: 12px; color: var(--muted); }
+    .sev-bar {
+        height: 6px;
+        background: #1c2638;
+        border-radius: 6px;
+        margin-top: 12px;
+        overflow: hidden;
+    }
+    .sev-bar > div { height: 100%; border-radius: 6px; }
 
-    hr {
-        border-color: #303846;
+    /* ---------- Native widgets ---------- */
+    [data-testid="stMetric"] {
+        background: linear-gradient(160deg, var(--panel-2), var(--panel));
+        padding: 18px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
     }
+    div[data-testid="stDataFrame"], div[data-testid="stDataEditor"] {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .stDownloadButton button, .stButton button {
+        border-radius: 10px;
+        border: 1px solid #2c3b57;
+        background: linear-gradient(135deg, #1b2540, #141c30);
+        font-weight: 600;
+        transition: all .15s ease;
+    }
+    .stDownloadButton button:hover, .stButton button:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+    [data-testid="stVegaLiteChart"] {
+        background: linear-gradient(160deg, var(--panel-2), var(--panel));
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+    }
+    hr { border-color: var(--border) !important; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -406,20 +564,35 @@ if search_ip:
 # DASHBOARD HEADER
 # ============================================================
 
-st.markdown(
-    '<div class="dashboard-title">🛡️ AI-SOC | Security Operations Dashboard</div>',
-    unsafe_allow_html=True
+time_min = df["timestamp"].min()
+time_max = df["timestamp"].max()
+time_range = (
+    f"{time_min:%d %b %Y %H:%M} → {time_max:%d %b %Y %H:%M} UTC"
+    if pd.notna(time_min) and pd.notna(time_max) else "Unknown"
 )
 
 st.markdown(
-    '<div class="dashboard-subtitle">'
-    'Educational AI-powered Security Operations Center prototype. '
-    'All alerts require human investigation.'
-    '</div>',
+    f"""
+    <div class="hero">
+        <div class="hero-top">
+            <div>
+                <div class="dashboard-title">🛡️ AI-SOC <span>Security Operations</span></div>
+                <div class="dashboard-subtitle">
+                    AI-powered threat detection, alert prioritization and analyst workflow.
+                    All alerts require human investigation.
+                </div>
+            </div>
+            <div class="status-pill"><span class="status-dot"></span>MONITORING ACTIVE</div>
+        </div>
+        <div class="hero-meta">
+            <div>📁 Source <b class="mono">{Path(loaded_file).name}</b></div>
+            <div>🕒 Window <b>{time_range}</b></div>
+            <div>🔄 Rendered <b>{datetime.now():%d %b %Y %H:%M}</b></div>
+        </div>
+    </div>
+    """,
     unsafe_allow_html=True
 )
-
-st.caption(f"Data source: {loaded_file}")
 
 
 # ============================================================
@@ -427,7 +600,7 @@ st.caption(f"Data source: {loaded_file}")
 # ============================================================
 
 st.markdown(
-    '<div class="section-title">📊 Security Overview</div>',
+    '<div class="section-title">Security Overview</div>',
     unsafe_allow_html=True
 )
 
@@ -439,22 +612,30 @@ unique_hosts = filtered_df["host"].nunique()
 
 unique_ips = filtered_df["source_ip"].nunique()
 
-col1, col2, col3, col4 = st.columns(4)
+alert_rate = (total_alerts / total_events * 100) if total_events else 0
 
-with col1:
-    st.metric("Total Events", total_events)
+kpis = [
+    ("Total Events", f"{total_events:,}", "Events in current view", "📡", "rgba(34,211,238,0.12)"),
+    ("Active Alerts", f"{total_alerts:,}", f"{alert_rate:.1f}% of events flagged", "🚨", "rgba(239,68,68,0.14)"),
+    ("Monitored Hosts", f"{unique_hosts:,}", "Unique endpoints", "🖥️", "rgba(99,102,241,0.15)"),
+    ("Source IPs", f"{unique_ips:,}", "Distinct origins", "🌐", "rgba(34,197,94,0.12)"),
+]
 
-with col2:
-    st.metric("Total Alerts", total_alerts)
-
-with col3:
-    st.metric("Unique Hosts", unique_hosts)
-
-with col4:
-    st.metric("Source IPs", unique_ips)
-
-
-st.divider()
+for column, (label, value, sub, icon, tint) in zip(st.columns(4), kpis):
+    with column:
+        st.markdown(
+            f"""
+            <div class="kpi-card">
+                <div class="kpi-head">
+                    <span>{label}</span>
+                    <span class="kpi-icon" style="background:{tint};">{icon}</span>
+                </div>
+                <div class="kpi-value">{value}</div>
+                <div class="kpi-sub">{sub}</div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 
 # ============================================================
@@ -462,18 +643,19 @@ st.divider()
 # ============================================================
 
 st.markdown(
-    '<div class="section-title">🚨 Alert Severity Overview</div>',
+    '<div class="section-title">Alert Severity</div>',
     unsafe_allow_html=True
 )
 
 severity_config = [
-    ("Critical", "#ff3333", "critical"),
-    ("High", "#ff7043", "high"),
-    ("Medium", "#ffb74d", "medium"),
-    ("Low", "#4caf50", "low"),
-    ("Review", "#42a5f5", "review"),
-    ("Informational", "#78909c", "informational")
+    ("Critical", "#ef4444"),
+    ("High", "#f97316"),
+    ("Medium", "#eab308"),
+    ("Low", "#22c55e"),
+    ("Review", "#3b82f6"),
+    ("Informational", "#64748b")
 ]
+severity_colors = dict(severity_config)
 
 severity_counts = (
     filtered_df[filtered_df["alert"] == True]["priority"]
@@ -481,31 +663,27 @@ severity_counts = (
     .to_dict()
 )
 
+severity_total = max(sum(severity_counts.values()), 1)
+
 for row_start in [0, 3]:
 
-    cols = st.columns(3)
-
-    for i, (severity, color, css_class) in enumerate(
-        severity_config[row_start:row_start + 3]
+    for column, (severity, color) in zip(
+        st.columns(3), severity_config[row_start:row_start + 3]
     ):
 
         count = severity_counts.get(severity, 0)
+        share = count / severity_total * 100
 
-        with cols[i]:
-
+        with column:
             st.markdown(
                 f"""
-                <div class="severity-card {css_class}">
+                <div class="severity-card" style="border-top:3px solid {color};">
                     <div class="severity-name">
-                        <span style="color:{color};">●</span>
-                        {severity}
+                        <span style="color:{color};">●</span>{severity}
                     </div>
-                    <div class="severity-label">
-                        {severity} Alerts
-                    </div>
-                    <div class="severity-value" style="color:{color};">
-                        {count}
-                    </div>
+                    <div class="severity-value" style="color:{color};">{count}</div>
+                    <div class="severity-label">{share:.0f}% of alerts</div>
+                    <div class="sev-bar"><div style="width:{share:.1f}%;background:{color};"></div></div>
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -514,50 +692,9 @@ for row_start in [0, 3]:
     st.write("")
 
 
-st.divider()
-
-
 # ============================================================
-# EVENT OVERVIEW
+# CHARTS
 # ============================================================
-
-st.markdown(
-    '<div class="section-title">📈 Event Overview</div>',
-    unsafe_allow_html=True
-)
-
-event_counts = (
-    filtered_df["event_type"]
-    .value_counts()
-    .rename_axis("Event Type")
-    .to_frame("Count")
-)
-
-if not event_counts.empty:
-
-    st.bar_chart(
-        event_counts,
-        x_label="Event Type",
-        y_label="Number of Events",
-        height=350
-    )
-
-else:
-
-    st.info("No events available for the selected filters.")
-
-
-st.divider()
-
-
-# ============================================================
-# ALERT PRIORITY DISTRIBUTION
-# ============================================================
-
-st.markdown(
-    '<div class="section-title">📊 Alert Priority Distribution</div>',
-    unsafe_allow_html=True
-)
 
 alert_df = filtered_df[filtered_df["alert"] == True]
 
@@ -570,37 +707,139 @@ priority_order = [
     "Informational"
 ]
 
-priority_counts = (
-    alert_df["priority"]
-    .value_counts()
-    .reindex(priority_order, fill_value=0)
-)
 
-if priority_counts.sum() > 0:
-
-    st.bar_chart(
-        priority_counts,
-        x_label="Priority",
-        y_label="Number of Alerts",
-        height=350
+def style_chart(chart):
+    return (
+        chart.configure_view(strokeWidth=0)
+        .configure_axis(
+            labelColor="#8b97ad",
+            titleColor="#8b97ad",
+            gridColor="#1f2a3d",
+            domainColor="#1f2a3d"
+        )
+        .configure_legend(labelColor="#c7cfdc", titleColor="#8b97ad")
+        .configure(background="transparent")
     )
 
+
+st.markdown(
+    '<div class="section-title">Activity Timeline</div>',
+    unsafe_allow_html=True
+)
+
+timeline_df = filtered_df.dropna(subset=["timestamp"]).copy()
+
+if not timeline_df.empty:
+    timeline_df["Time"] = timeline_df["timestamp"].dt.tz_convert(None).dt.floor("h")
+    timeline_df["Type"] = np.where(timeline_df["alert"], "Alerts", "Normal Events")
+    timeline = (
+        timeline_df.groupby(["Time", "Type"]).size().reset_index(name="Count")
+    )
+    timeline_chart = (
+        alt.Chart(timeline)
+        .mark_area(opacity=0.5, interpolate="monotone", line=True)
+        .encode(
+            x=alt.X("Time:T", title=None),
+            y=alt.Y("Count:Q", title="Events per hour", stack=None),
+            color=alt.Color(
+                "Type:N",
+                scale=alt.Scale(
+                    domain=["Normal Events", "Alerts"],
+                    range=["#22d3ee", "#ef4444"]
+                ),
+                legend=alt.Legend(orient="top", title=None)
+            ),
+            tooltip=["Time:T", "Type:N", "Count:Q"]
+        )
+        .properties(height=280)
+    )
+    st.altair_chart(style_chart(timeline_chart), use_container_width=True)
 else:
+    st.info("No timestamped events available for the selected filters.")
 
-    st.info("No alerts available for the selected filters.")
 
+left_col, right_col = st.columns([1.4, 1])
 
-st.divider()
+with left_col:
 
+    st.markdown(
+        '<div class="section-title">Event Overview</div>',
+        unsafe_allow_html=True
+    )
+
+    event_counts = (
+        filtered_df["event_type"]
+        .value_counts()
+        .rename_axis("Event Type")
+        .reset_index(name="Count")
+    )
+
+    if not event_counts.empty:
+        event_chart = (
+            alt.Chart(event_counts)
+            .mark_bar(cornerRadiusEnd=6)
+            .encode(
+                y=alt.Y("Event Type:N", sort="-x", title=None),
+                x=alt.X("Count:Q", title="Number of events"),
+                color=alt.Color(
+                    "Count:Q",
+                    scale=alt.Scale(range=["#3b4a8f", "#22d3ee"]),
+                    legend=None
+                ),
+                tooltip=["Event Type:N", "Count:Q"]
+            )
+            .properties(height=300)
+        )
+        st.altair_chart(style_chart(event_chart), use_container_width=True)
+    else:
+        st.info("No events available for the selected filters.")
+
+with right_col:
+
+    st.markdown(
+        '<div class="section-title">Alert Priority Mix</div>',
+        unsafe_allow_html=True
+    )
+
+    priority_counts = (
+        alert_df["priority"]
+        .value_counts()
+        .reindex(priority_order, fill_value=0)
+        .rename_axis("Priority")
+        .reset_index(name="Alerts")
+    )
+    priority_counts = priority_counts[priority_counts["Alerts"] > 0]
+
+    if not priority_counts.empty:
+        donut = (
+            alt.Chart(priority_counts)
+            .mark_arc(innerRadius=70, outerRadius=120, cornerRadius=4, padAngle=0.02)
+            .encode(
+                theta=alt.Theta("Alerts:Q"),
+                color=alt.Color(
+                    "Priority:N",
+                    sort=priority_order,
+                    scale=alt.Scale(
+                        domain=priority_order,
+                        range=[severity_colors[p] for p in priority_order]
+                    ),
+                    legend=alt.Legend(orient="right", title=None)
+                ),
+                tooltip=["Priority:N", "Alerts:Q"]
+            )
+            .properties(height=300)
+        )
+        st.altair_chart(style_chart(donut), use_container_width=True)
+    else:
+        st.info("No alerts available for the selected filters.")
 
 
 # ============================================================
 # AI MODEL PERFORMANCE
 # ============================================================
 
-st.divider()
 st.markdown(
-    '<div class="section-title">🤖 AI Model Performance</div>',
+    '<div class="section-title">AI Model Performance</div>',
     unsafe_allow_html=True
 )
 
@@ -717,7 +956,7 @@ else:
 # ============================================================
 
 st.markdown(
-    '<div class="section-title">🔎 Alert Investigation</div>',
+    '<div class="section-title">Alert Investigation</div>',
     unsafe_allow_html=True
 )
 
@@ -846,7 +1085,7 @@ st.divider()
 # ============================================================
 
 st.markdown(
-    '<div class="section-title">📋 All Security Events</div>',
+    '<div class="section-title">All Security Events</div>',
     unsafe_allow_html=True
 )
 
@@ -880,7 +1119,7 @@ else:
 st.divider()
 
 st.markdown(
-    '<div class="section-title">📥 Export Security Reports</div>',
+    '<div class="section-title">Export Security Reports</div>',
     unsafe_allow_html=True
 )
 
